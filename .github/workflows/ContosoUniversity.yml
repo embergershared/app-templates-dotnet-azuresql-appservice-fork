@@ -16,9 +16,6 @@ on:
 # We also want to be able to run this manually from Github
   workflow_dispatch:
 
-# Set it to run on self-hosted runner
-runs-on: self-hosted
-
 env:
   CONFIGURATION: release
   AZ_APP_NAME: ${{ secrets.AZURE_ENVIRONMENT_NAME }}-app
@@ -26,8 +23,9 @@ env:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    # Set it to run on self-hosted runner
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v2
@@ -66,7 +64,9 @@ jobs:
   
   release:
     needs: build
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    # Set it to run on self-hosted runner
+    runs-on: self-hosted
 
     steps:
       - name: Download APP Artifact
