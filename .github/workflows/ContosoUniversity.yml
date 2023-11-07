@@ -15,7 +15,10 @@ on:
       - 'infra/**'
 # We also want to be able to run this manually from Github
   workflow_dispatch:
-  
+
+# Set it to run on self-hosted runner
+runs-on: self-hosted
+
 env:
   CONFIGURATION: release
   AZ_APP_NAME: ${{ secrets.AZURE_ENVIRONMENT_NAME }}-app
