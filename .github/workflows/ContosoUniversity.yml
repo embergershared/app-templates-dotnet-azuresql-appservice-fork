@@ -95,12 +95,18 @@ jobs:
           ApplicationInsights.ConnectionString: ${{ secrets.AZURE_CONTOSO_APP_INSIGHTS }}
       
       - name: Azure Login
-        uses: Azure/login@v1.4.4
+        uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: az cli version
+        run: az version
+
+      - name: pwd
+        run: pwd
+
       - name: Deploy API
-        uses: azure/webapps-deploy@v2.2.3
+        uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZ_API_NAME }}
           package: api-artifact
