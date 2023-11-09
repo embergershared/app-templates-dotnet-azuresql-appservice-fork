@@ -107,8 +107,9 @@ jobs:
 
       - name: az account infos
         run: |
-          echo "Subscription     : $(az account show --query "name" -o tsv)"
-          echo "Service Principal: $(az account show --query "user.name" -o tsv)"
+          echo "Subscription: $(az account show --query "name" -o tsv)"
+          echo "SPN Name    : $(az account show --query "user.name" -o tsv)"
+          echo "SPN App Id  : $(az account show --query "id" -o tsv)"
 
       - name: pwd
         run: pwd
