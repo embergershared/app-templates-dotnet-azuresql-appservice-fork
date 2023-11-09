@@ -105,6 +105,11 @@ jobs:
       - name: az cli version
         run: az version
 
+      - name: az account infos
+        run: |
+          echo "Subscription     : $(az account show --query "name" -o tsv)"
+          echo "Service Principal: $(az account show --query "user.name" -o tsv)"
+
       - name: pwd
         run: pwd
 
