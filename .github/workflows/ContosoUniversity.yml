@@ -33,7 +33,7 @@ jobs:
     # runs-on: self-hosted
     # Use Hermitage runners' group (organization level)
     runs-on:
-      group: embergerhsared
+      group: embergershared
       labels: 446692
 
     steps:
@@ -79,7 +79,7 @@ jobs:
     # runs-on: self-hosted
     # Use Hermitage runners' group (organization level)
     runs-on:
-      group: embergerhsared
+      group: embergershared
       labels: 446692
 
     steps:
